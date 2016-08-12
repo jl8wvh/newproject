@@ -1,0 +1,11 @@
+<h1>ついったーもどき（入力画面）</h1>
+<br>
+
+<%= form_for Tweet.new do |f| %>
+ <%= f.label :title %>
+ <%= f.text_field :title %>
+ <%= f.label :content %>
+ <%= f.text_area :content %>
+ <%= f.submit %>
+<% end %>
+

@@ -1,0 +1,56 @@
+<head>
+    <title>ついったーもどき
+    </title>
+</head>
+<body bgcolor="#1E90FF">
+
+<h1>
+<a href='index'>
+<img src="https://pbs.twimg.com/profile_images/516121765412478977/mAOnzaM9_400x400.png" width="60" height="60">
+        <font color="black">
+    ついったーもどき
+        </font>
+    </a>
+</h1>
+
+<hr>
+<%= form_for Tweet.new do |f| %>
+ <%= f.label :title %>
+ <%= f.text_area :title,:size=>"25x2" %>
+ <%= f.label :content %>
+ <%= f.text_area :content,:size=>"60x2" %>
+ 投稿日時:<%= day=Time.now %>
+ 
+ <br>
+ <%= f.submit %>
+<% end %>
+<br>
+◯今後やりたいこと<br>
+・10秒おきとかにリダイレクトさせたい<br>
+・表示を逆順にしたい（新しいものを上に）<br>
+・本文の横に日付入れたい→枠だけ作ってみた<br>
+
+<hr>
+<h1>新着ついーと</h1>
+
+<% @tweets.each do |tweet| %>
+<table>
+    <tr>
+        <td width="200">
+タイトル:<%= tweet.title %>
+        </td>
+        
+        <td width="400">
+本文:<%= tweet.content %>
+        </td>
+        <td>
+            日時:2016年くらい
+        </td>
+    </tr>
+</table>
+<br>
+<% end %>
+<br>
+<hr>
+Copyright © 2016 jl8wvh All Rights Reserved.
+</body>
